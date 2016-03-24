@@ -1,6 +1,11 @@
 # TakeXat
 A strongly typed, refactor-safe, fluent extension library for NakedObjects XAT
 
+Package is available on nuget.org
+```
+Install-Package Dreamtec.TakeXat
+```
+
 ## Usage
 ##### Single entity
 Setup a method that returns a single entity
