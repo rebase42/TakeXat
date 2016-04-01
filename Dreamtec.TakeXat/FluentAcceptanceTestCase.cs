@@ -36,5 +36,6 @@ namespace Dreamtec.TakeXat
 			return new FluentTestObject<T>(testObject, instance);
 		}
 
+		
 	}
 }

@@ -12,7 +12,12 @@ namespace Dreamtec.TakeXat
 		public static FluentTestAction<TResult> Setup<T, TResult>(this FluentTestService<T> obj, Expression<Func<T, TResult>> action)
 		{
 			return Setup(obj.Service, action);
-;		}
+		}
+
+		public static FluentTestAction<T> Setup<T>(this FluentTestService<T> obj, Expression<Action<T>> action)
+		{
+			return Setup(obj.Service, action);
+		}
 
 		public static FluentTestAction<TResult> Setup<T, TResult>(this FluentTestObject<T> obj, Expression<Func<T, TResult>> action)
 		{
