@@ -79,7 +79,6 @@ namespace Dreamtec.TakeXat
 
 			return new FluentTestCollection<T>(collection, (T) collection.NakedObject.Object);
 		}
-
 		
 	}
 }
