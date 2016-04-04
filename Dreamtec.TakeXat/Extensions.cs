@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
 using NakedObjects;
@@ -47,7 +48,8 @@ namespace Dreamtec.TakeXat
 			var expression = methodCallExpression;
 			var methodName = expression.Method.Name;
 
-			var paramTypes = expression.GetParameterTypes();
+			var paramTypes = expression.Method.GetParameters().Select(o => o.ParameterType).ToArray();
+			//var paramTypes = expression.GetParameterTypes();
 			var paramValues = expression.GetParameterValues();
 			var nofName = NameUtils.MakeTitle(methodName);
 			
