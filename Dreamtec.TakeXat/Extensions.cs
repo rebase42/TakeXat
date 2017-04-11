@@ -1,4 +1,5 @@
 using System;
+using System.ComponentModel;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
@@ -60,8 +61,13 @@ namespace Dreamtec.TakeXat
 				var named = method.GetCustomAttribute<NamedAttribute>();
 				nofName = named.Value;
 			}
+		    if (method.GetCustomAttribute<DisplayNameAttribute>() != null)
+		    {
+		        var named = method.GetCustomAttribute<DisplayNameAttribute>();
+		        nofName = named.DisplayName;
+		    }
 
-			var nofAction = obj.GetAction(nofName, paramTypes);
+            var nofAction = obj.GetAction(nofName, paramTypes);
 			return new FluentTestAction<T>(nofAction, paramValues);
 		}
 
